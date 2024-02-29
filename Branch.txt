@@ -5,13 +5,7 @@ To see remote branches, run this command: git branch -r
 To see all local and remote branches, run this command: git branch -a
 
 
-git branch <Branch Name> create a New branch
-git switch <Branch Name> siwtching from master to another branch
-git checkout -b <Branch Name> Create a new branch then switching into new branch
-git branch -a  to check all branches in git and also github
-git branch -M <New Branch> Rename the Master branch
-how to delete a branch in git ?
-git branch -D <Branch Name>
+offering projects projectk9 and k8
 
  git log --oneline --all --graph
 
