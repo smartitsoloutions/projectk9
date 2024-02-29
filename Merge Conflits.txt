@@ -1,0 +1,70 @@
+Merge conflits & Merge abort (git merge --abort)
+___________________________________________________________________________
+Mearg (we can modified same file both (master & branch)
+
+
+Sri Sai@LAPTOP-9LRICVTO MINGW64 ~/OneDrive/Desktop/testproject (registration)
+$ vi text.java
+
+Sri Sai@LAPTOP-9LRICVTO MINGW64 ~/OneDrive/Desktop/testproject (registration)
+$ git commit -am "one"
+[registration fb4491a] one
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+Sri Sai@LAPTOP-9LRICVTO MINGW64 ~/OneDrive/Desktop/testproject (registration)
+$ git switch master
+Switched to branch 'master'
+
+Sri Sai@LAPTOP-9LRICVTO MINGW64 ~/OneDrive/Desktop/testproject (master)
+$ vi text.java
+
+Sri Sai@LAPTOP-9LRICVTO MINGW64 ~/OneDrive/Desktop/testproject (master)
+$ git commit -am "two"
+[master 5157e26] two
+ 1 file changed, 1 deletion(-)
+
+Sri Sai@LAPTOP-9LRICVTO MINGW64 ~/OneDrive/Desktop/testproject (master)
+$ git merge registration
+Auto-merging text.java
+CONFLICT (content): Merge conflict in text.java
+Automatic merge failed; fix conflicts and then commit the result.
+
+$ git add .
+
+Sri Sai@LAPTOP-9LRICVTO MINGW64 ~/OneDrive/Desktop/project110 (master|MERGING)
+$ git commit
+[master e1f5f54] Merge branch 'feature100'
+
+Sri Sai@LAPTOP-9LRICVTO MINGW64 ~/OneDrive/Desktop/project110 (master)
+$ git log --oneline
+e1f5f54 (HEAD -> master) Merge branch 'feature100'
+928f9a9 it is my 7th update
+1b7c8f3 (feature100) it is my 6th commit
+92c75b6 it is my 4th update
+40ec9d3 (origin/master) it my first commit update
+fd779b9 it is my second update
+bb7bb2b it is my first update in project110
+
+Sri Sai@LAPTOP-9LRICVTO MINGW64 ~/OneDrive/Desktop/project110 (master)
+$ git show e1f5f54
+commit e1f5f54fe259022ebae30edc803c9684b9cc377e (HEAD -> master)
+Merge: 928f9a9 1b7c8f3
+Author: smartitsoloutions <prasads128312@gmail.com>
+Date:   Tue Jul 18 16:36:20 2023 +0530
+
+    Merge branch 'feature100'
+
+diff --cc newcoad.txt
+index 2da4e0a,14aa891..e028a67
+--- a/newcoad.txt
++++ b/newcoad.txt
+@@@ -1,3 -1,2 +1,7 @@@
+  hellow how are your this is my first coad
+++<<<<<<< HEAD
+ +we offering number of courses in cloud env
+ +
+++=======
++ oneline message
+++>>>>>>> feature100
+
+

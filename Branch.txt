@@ -1,0 +1,31 @@
+How do I know if a branch is remote?
+List All Branches
+To see local branches, run this command: git branch
+To see remote branches, run this command: git branch -r
+To see all local and remote branches, run this command: git branch -a
+
+
+git branch <Branch Name> create a New branch
+git switch <Branch Name> siwtching from master to another branch
+git checkout -b <Branch Name> Create a new branch then switching into new branch
+git branch -a  to check all branches in git and also github
+git branch -M <New Branch> Rename the Master branch
+how to delete a branch in git ?
+git branch -D <Branch Name>
+
+ git log --oneline --all --graph
+
+* 5e047b0 (HEAD -> master, origin/master) this is my new website
+* 4f57bc3 (origin/testbranch) Update text.java
+*   a7dc704 Merge branch 'passwd'
+|\
+| * fbe4ef9 this is test100
+* | 4769aee test200
+|/
+| * 0204e29 (origin/features) feature branch update
+| * 0115580 this is my final update
+| * 88940e5 this is my branch update
+|/
+* 824ec20 this is my seconnd commint
+* 6cd9b2f this is my first update
+

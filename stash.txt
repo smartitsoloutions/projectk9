@@ -1,0 +1,96 @@
+You can do it in branch 
+_________________________
+
+Sri Sai@LAPTOP-9LRICVTO MINGW64 ~/OneDrive/Desktop/test10 (login)
+$ cat > ok
+7909056-256
+
+Sri Sai@LAPTOP-9LRICVTO MINGW64 ~/OneDrive/Desktop/test10 (login)
+$ git add .
+warning: in the working copy of 'ok', LF will be replaced by CRLF the next time Git touches it
+
+Sri Sai@LAPTOP-9LRICVTO MINGW64 ~/OneDrive/Desktop/test10 (login)
+$ git commit -m "ok"
+[login 22c827b] ok
+ 2 files changed, 2 insertions(+)
+ create mode 100644 ok
+
+Sri Sai@LAPTOP-9LRICVTO MINGW64 ~/OneDrive/Desktop/test10 (login)
+$ vi ok
+
+Sri Sai@LAPTOP-9LRICVTO MINGW64 ~/OneDrive/Desktop/test10 (login)
+$ git status
+On branch login
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ok
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Sri Sai@LAPTOP-9LRICVTO MINGW64 ~/OneDrive/Desktop/test10 (login)
+$ git checkout master
+error: Your local changes to the following files would be overwritten by checkout:
+        ok
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+Sri Sai@LAPTOP-9LRICVTO MINGW64 ~/OneDrive/Desktop/test10 (login)
+$ git stash
+warning: in the working copy of 'ok', LF will be replaced by CRLF the next time Git touches it
+Saved working directory and index state WIP on login: 22c827b ok
+
+Sri Sai@LAPTOP-9LRICVTO MINGW64 ~/OneDrive/Desktop/test10 (login)
+$ git checkout master
+Switched to branch 'master'
+
+Sri Sai@LAPTOP-9LRICVTO MINGW64 ~/OneDrive/Desktop/test10 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Sri Sai@LAPTOP-9LRICVTO MINGW64 ~/OneDrive/Desktop/test10 (master)
+$ git checkout login
+Switched to branch 'login'
+
+Sri Sai@LAPTOP-9LRICVTO MINGW64 ~/OneDrive/Desktop/test10 (login)
+$ git stash list
+stash@{0}: WIP on login: 22c827b ok
+
+Sri Sai@LAPTOP-9LRICVTO MINGW64 ~/OneDrive/Desktop/test10 (login)
+$ git status
+On branch login
+nothing to commit, working tree clean
+
+Sri Sai@LAPTOP-9LRICVTO MINGW64 ~/OneDrive/Desktop/test10 (login)
+$ git stash pop
+On branch login
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ok
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (0acc549b6808144d18ac574a0f674880e52c2ec3)
+
+Sri Sai@LAPTOP-9LRICVTO MINGW64 ~/OneDrive/Desktop/test10 (login)
+$ git add .
+
+Sri Sai@LAPTOP-9LRICVTO MINGW64 ~/OneDrive/Desktop/test10 (login)
+$ git commit -m "ok ok"
+[login b29a15d] ok ok
+ 1 file changed, 2 insertions(+)
+
+Sri Sai@LAPTOP-9LRICVTO MINGW64 ~/OneDrive/Desktop/test10 (login)
+$ git log
+commit b29a15dab67bc0577f74a55bf791834642159da6 (HEAD -> login)
+Author: smartitsoloutions <prasads128312@gmail.com>
+Date:   Fri Sep 8 19:56:21 2023 +0530
+
+    ok ok
+
+commit 22c827b38c0fdd30f3ce71f5acfb2b386bdb0505
+Author: smartitsoloutions <prasads128312@gmail.com>
+Date:   Fri Sep 8 19:53:59 2023 +0530
+
+    ok
