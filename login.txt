@@ -1,0 +1,7 @@
+login details:
+user name
+age
+qualification
+location
+area
+contact number
